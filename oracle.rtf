@@ -1,0 +1,226 @@
+{\rtf1\ansi\ansicpg1252\deff0\deflang1033{\fonttbl{\f0\fnil\fcharset0 Calibri;}}
+{\*\generator Msftedit 5.41.21.2510;}\viewkind4\uc1\pard\sa200\sl276\slmult1\lang9\f0\fs22 =================================================================================\par
+1Q.Given the book_master table \par
+            Book_code     Number(5) \par
+             Book_Name   varchar2(40) \par
+             Pub_year        number(4)\par
+\par
+       I would like to print a report classifying   the books  on the following basis \par
+                 Publishing year                   Edition  \par
+                Between   1973 and 1999         "Old "\par
+                     >= 2000                            "New" \par
+\par
+How   can I achieve this  ?\par
+1). Using a  CASE statement\par
+2). Using a WITH statement\par
+3). Using a DECODE  function\par
+4). Need to write a PL/SQL statement for  doing this\par
+Solution :\par
+option [1] is correct\par
+==================================================================================\par
+2Q. SELECT dept_code, staff_name, staff_sal\par
+FROM Staff_Master \par
+ORDER BY dept_code, staff_sal\par
+\par
+What is true regarding the above query?\par
+1). Sorts the records based on dept_code\par
+2). Sorts the records based on staff_sal and then dept_code\par
+3). Sorts the records based on staff_sal\par
+4). Sorts the records based on dept_code and then staff_sal\par
+Solution :\par
+option [4] is correct\par
+==================================================================================\par
+3Q. Given the structure of the BOOK_MASTER Table  \par
+BOOK_ID VARCHAR2(20)\par
+BOOK_NAME VARCHAR2(30)\par
+what will be the output of the following  query \par
+ SELECT book_name \par
+ FROM Book_master\par
+WHERE book_name LIKE '%JAVA%' OR '%C%'\par
+1). All books which has JAVA and C somewhere in the book name\par
+2). All books with book name starting with JAVA\par
+3). No output\par
+4). error in the query\par
+Solution :\par
+option [4] is correct\par
+==================================================================================\par
+4Q. Assuming today is Monday, 10 July 2000, what is returned by this statement: \par
+SELECT to_char(NEXT_DAY(sysdate, 'MONDAY'), 'DD-MON-YY') FROM dual;     \par
+1). 17-Jul-00\par
+2). 17-JUL-00\par
+3). Jul-17-00\par
+4). 17-7-00\par
+Solution :\par
+option [2] is correct\par
+==================================================================================5Q. I would like to find out number of employees in all departments, except department 10.  \par
+Smith writes the query below . Which of the following comments is most appropriate \par
+for the query ?\par
+\par
+                SELECT  dept_code , count(staff_code)\par
+                FROM  staff_master \par
+                GROUP BY dept_code \par
+                HAVING dept_code <> 10\par
+1). Error : No need to use a having clause , WHERE clause can be used  instead\par
+               \par
+2). Query is perfect\par
+               \par
+3). Error : Condition is wrong , it should be \par
+                          HAVING dept_code = 10\par
+               \par
+4). Error : HAVING  must have only an aggregating column\par
+               \par
+Solution :\par
+option [1] is correct\par
+==================================================================================\par
+6Q. In which of the Following persistence life cycle state the object is not yet associated with an Entity Manager \par
+1). Managed\par
+2). New\par
+3). Detached\par
+4). Removed\par
+Solution :\par
+option [2] is correct\par
+==================================================================================\par
+7Q. What is the use of "contains" EntityManager  method\par
+1). Returns true if the entity instance is in the persistence context. This signifies that the entity instance is managed\par
+2). Clears the entities from the persistence context\par
+3). Persists the entity object\par
+4). Detaches an entity from the persistence context\par
+Solution :option [1] is correct\par
+==================================================================================\par
+8Q. Select the correct statement?\par
+1). JPA need ORM implementation to work\par
+2). ORM framework that can use with JPA are TopLink,OpenJPA & Hibernate\par
+3). JPA is database\par
+4). All of Above\par
+Solution :\par
+option [1,2] are correct\par
+=================================================================================\par
+9What are the advantages of JPA? Select the correct options.\par
+1). Database independent.\par
+2). Concurrency support.\par
+3). Easy maintenance and increases productivity\par
+4). All of Above\par
+Solution :\par
+option [4] is correct\par
+==================================================================================10Q. What is the use of EntityManagerFactory class?\par
+1). Designed to create EntityManager. \par
+2). Designed to create Persistance. \par
+3). Responsible for creating EntityManager instance. It is obtained using Persistence class's createEntityManagerFactory static method. \par
+4). Designed to create Entity. \par
+Solution :\par
+option [1,3] are correct\par
+====================================================================================================================================================================\par
+1Q. Which of the following are  in-correct w.r.t subquery ?\par
+1). Subquery can contain ORDER BY clause\par
+2). Subquery can contain GROUP BY clause\par
+3). Subquery can contain WHERE clause\par
+4). Subquery can contain AGGREGATE functions\par
+Solution :\par
+option [1] is correct\par
+==================================================================================\par
+2Q. Which of the following subquery is correct for displaying the employee name along with the hiredate of those employees who joined the organization earliest ?\par
+1). SELECT ename,hiredate FROM emp WHERE hiredate IN\par
+(SELECT min(hiredate) FROM emp )\par
+2). SELECT ename,hiredate FROM emp WHERE hiredate IN\par
+(SELECT max(hiredate) FROM emp )\par
+3). SELECT ename FROM emp WHERE hiredate IN\par
+(SELECT max(hiredate) FROM emp GROUP BY hiredate)\par
+4). SELECT ename FROM emp WHERE hiredate IN\par
+(SELECT max(hiredate) FROM emp GROUP BY empno)\par
+Solution :\par
+option [1] is correct\par
+==================================================================================\par
+3Q. Examine the structure of table EMP1:\par
+\par
+Name                Null?                       Type \par
+EMPID              NOT NULL              NUMBER(2) \par
+EMPNAME                                     VARCHAR2(10) \par
+DEPTNO           NOT NULL               NUMBER(2)\par
+JOB                                                VARCHAR2(50)    \par
+\par
+SQL>alter table emp1 set unused (job, empname);\par
+\par
+What is true related to the above example?\par
+1). DESC EMP1; displays the structure of EMP1 table excluding the columns JOB and EMPNAME.\par
+2). Data dictionary USER_COL_TABS maintains information of the tables with columns \par
+     marked as "unused"\par
+3). Marking the columns as unused release the space occupied by them back to the database\par
+4). None of the above. \par
+Solution :\par
+option [1] is correct\par
+============================================================================\par
+4Q. Which constraint cannot be applied as a table level constraint ?\par
+1). not null\par
+2). primary key\par
+3). foreign key\par
+4). unique\par
+Solution :\par
+option [1] is correct\par
+==================================================================================\par
+5Which of the following are in-correct w.r.t foreign key column values?\par
+1). Foreign key column can contain null values\par
+2). Foreign key column can contain duplicate values\par
+3). Foreign key column can contain values not present in its corresponding primary key column\par
+4). Foreign key column must contain values present in its corresponding primary key column\par
+5). Foreign key and the primary key it is referring to can be present in the same table\par
+Solution :\par
+option [3] is correct\par
+==================================================================================\par
+6Q. Which of the following statements are correct w.r.t database objects\par
+1). The value of sequencename.currval can be fetched before sequencename.nextval is issued\par
+2). Synonym for a procedure can be created\par
+3). It is possible to update all the tables on which the view is based\par
+4). Oracle automatically creates an index for every primary/unique key constraint declared\par
+Solution :\par
+option [2,4] are correct\par
+==================================================================================7Q. See the below data.\par
+\par
+EMP_ID     DEPT_ID       COMMISSION\par
+\par
+1                  10                  500\par
+2                  20                  1000\par
+3                  10\par
+4                  10                  600\par
+5                  30                  800\par
+6                  30                  200\par
+7                  10\par
+8                  20                  300\par
+\par
+The COMMISSION column shows the monthly commission earned by the employee.\par
+Which of the tasks would require sub queries in order to be performed in a single step?\par
+1). deleting the records of employees who do not earn commission\par
+2). increasing the commission of employee 3 by the average commission earned in \par
+     department 20\par
+3). finding the number of employees who do NOT  earn commission and are working \par
+     for department 20\par
+4). inserting into the table a new employee 10 who works for department 20 and earns \par
+     a commission that is equal to the commission earned by employee 3\par
+Solution :\par
+option [2,4] are correct\par
+==================================================================================\par
+8QQ. Which option should be used to create a view only if the base tables exist?\par
+1). Replace\par
+2). Force\par
+3). NoForce\par
+4). With Check Option\par
+Solution :\par
+option [3] is correct\par
+=================================================================================\par
+9Q. Deletion of the database objects can be achieved using following command?\par
+1). DELETE\par
+2). TRUNCATE\par
+3). DROP\par
+4). All the above\par
+Solution :\par
+option [3] is correct\par
+==================================================================================\par
+10Q. Which are the valid multi row subquery operators ?\par
+1). =\par
+2). IN\par
+3). >\par
+4). >=ANY\par
+Solution :\par
+option [2,4] are correct\par
+=================================================================================\par
+}
+ 
